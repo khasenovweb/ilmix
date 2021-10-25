@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@red: #FF0417;
+@black: #3F4A5B;
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+}
+html {
+    font-size: 1px;
+    @media screen and (max-width: 1650px) {
+        font-size: 0.9px;
+    }
+    @media screen and (max-width: 1500px) {
+        font-size: 0.8px;
+    }
+    @media screen and (max-width: 1400px) {
+        font-size: 0.7px;
+    }
+    @media screen and (max-width: 1200px) {
+        font-size: 0.6px;
+    }
+    @media screen and (max-width: 1024px) {
+        font-size: 1px;
+    }
+    @media screen and (max-width: 900px) {
+        font-size: 0.9px;
+    }
+    @media screen and (max-width: 800px) {
+        font-size: 0.8px;
+    }
+    @media screen and (max-width: 700px) {
+        font-size: 1px;
+    }
+}
+
+body {
+    font-size: 16rem;
+}
+
+
+.global__wrapper {
+    &.overflow-hidden {
+        height: 100vh;
+        overflow: hidden;
+    }
+}
+
+.container {
+    max-width: 1468rem;
+    padding: 0 20rem;
+    margin: 0 auto;
+}
+
+input[type="text"] {
+    border: 1px solid #E3E8EF;
+    border-radius: 100px;
+    padding: 17rem 20rem;
+    width: 100%;
+    font-size: 14rem;
+    &::placeholder {
+        color: #D2D2D2;
+    }
+    &.error {
+        border-color: #F74F4F;
+        &::placeholder {
+            color: #F64F4F;
+        }
+    }
+    &.valid {
+        border-color:  #7FB885;
+        color:  #7FB885;
+    }
+}
+
+label {
+    color: #3F4A5B;
+    font-weight: 500;
+    font-size: 16rem;
+}
+
+.btn {
+    background: linear-gradient(357.24deg, #E92231 -5.98%, #FF3E4C 90.08%);
+    box-shadow: 0px 4px 20px rgba(226, 0, 17, 0.2);
+    border-radius: 100px;
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 23rem 40rem;
+    cursor: pointer;
+    &:hover {
+        background: linear-gradient(357.24deg, #E92231 -5.98%, #CC2834 90.08%);
+    }
+}
+
+// ============================================================= //
+// ======================= checkbox ============================ //
+// ============================================================= //
+.checkbox {
+    cursor: pointer;
+    input {
+        display: none;
+        &:checked + .checkbox__custom {
+            background-color: #56B65F;
+            .checkbox__custom__circle {
+                background-color: #fff;
+                transform: translateX(10rem);
+            }
+        }
+    }
+}
+.checkbox__custom {
+    display: block;
+    width: 22rem;
+    min-width: 22rem;
+    height: 12rem;
+    border-radius: 100rem;
+    background-color: #E0E5EC;
+    position: relative;
+    transition: 0.3s;
+}
+
+.checkbox__custom__circle {
+    display: block;
+    width: 8rem;
+    min-width: 8rem;
+    height: 8rem;
+    border-radius: 100%;
+    background-color: #B1BBCA;
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+    transition: 0.3s;
+}
+// ============================================================= //
+// ======================= checkbox ============================ //
+// ============================================================= //
+
+@import "libs/owl.carousel.min.css";
+@import "partials/_heromain.less";

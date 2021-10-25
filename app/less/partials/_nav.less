@@ -1,0 +1,116 @@
+.nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #FFF1ED;
+    z-index: 2;
+    overflow: hidden;
+    visibility: hidden;
+    transform: translateY(-90rem);
+    opacity: 0;
+    transition: 0.2s;
+    &.active {
+        visibility: visible;
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.nav__content__wrapper {
+    overflow-y: auto;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+.nav__content {
+    padding: 200rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.nav__links {
+    li {
+        display: flex;
+        justify-content: center;
+    }
+    a {
+        text-align: center;
+        font-size: 30rem;
+        font-weight: 500;
+        color: @black;
+        text-transform: uppercase;
+        padding: 7rem;
+        &:hover {
+            color: @red;
+        }
+    }
+}
+.nav__contacts {
+    margin-top: 90rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    a {
+        display: inline-block;
+        color: @black;
+        &:hover {
+            color: @red;
+        }
+    }
+}
+
+.nav__phone {
+    font-weight: bold;
+    font-size: 24rem;
+}
+.nav__email {
+    margin-top: 12rem;
+    font-size: 18rem;
+}
+.nav__socials {
+    display: flex;
+    align-items: center;
+    margin-top: 28rem;
+    a {
+        display: block;
+        margin: 10rem;
+    }
+}
+
+.nav__cloud {
+    position: absolute;
+    &.right {
+        right: -400rem;
+        top: -400rem;
+    }
+    &.left {
+        left: -400rem;
+        bottom: -400rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .nav__cloud.right {
+        right: -630rem;
+        top: -630rem;
+    }
+    .nav__cloud.left {
+        left: -630rem;
+        bottom: -630rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .nav__content {
+        padding: 100rem 0;
+    }
+    .nav__links a {
+        font-size: 20rem;
+    }
+    .nav__contacts {
+        margin-top: 50px;
+    }
+}
