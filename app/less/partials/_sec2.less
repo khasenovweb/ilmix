@@ -1,0 +1,100 @@
+.sec2 {
+    position: relative;
+    background-color: #FFF1ED;
+    padding-top: 116rem;
+    padding-bottom: 170rem;
+}
+.sec2__parallax__wrapper {
+    position: absolute;
+    .sec2__parallax__img {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    &:nth-child(1) {
+        top: 0;
+        left: -650rem;
+        .sec2__parallax__img {
+            width: 1133rem;
+            height: 1140rem;
+        }
+    }
+    &:nth-child(2) {
+        top: 0;
+        right: -300rem;
+        .sec2__parallax__img {
+            width: 760rem;
+            height: 963rem;
+        }
+    }
+}
+.sec2__item__icon {
+    width: 132rem;
+    height: 122rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.sec2__item__title {
+    margin-top: 30rem;
+    font-size: 18rem;
+    color: @black;
+    text-align: center;
+}
+.sec2__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 73rem;
+    grid-gap: 30rem;
+    padding: 0 300rem;
+}
+.sec2__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .sec2 {
+        padding-top: 70rem;
+        padding-bottom: 125rem;
+    }
+    .sec2__items {
+        padding: 0;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .sec2__parallax__wrapper:nth-child(1) .sec2__parallax__img {
+        width: 864rem;
+        height: 869rem;
+    }
+    .sec2__parallax__wrapper:nth-child(1) {
+        left: -570rem;
+    }
+    .sec2__parallax__wrapper:nth-child(2) .sec2__parallax__img {
+        width: 760rem;
+        height: 963rem;
+    }
+    .sec2__parallax__wrapper:nth-child(2) {
+        right: -440rem;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .sec2__parallax__wrapper {
+        display: none;
+    }
+    .sec2 {
+        padding-top: 36rem;
+        padding-bottom: 68rem;
+    }
+    .sec2__items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .sec2__item__icon {
+        width: 106rem;
+        height: 97rem;
+        grid-gap: 20rem;
+    }
+}

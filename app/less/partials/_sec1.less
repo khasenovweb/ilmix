@@ -1,0 +1,141 @@
+.sec1 {
+    padding: 100px 0;
+    color: @black;
+    position: relative;
+}
+.sec1__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30rem;
+    align-items: center;
+}
+.sec1__img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    min-height: 626rem;
+}
+.sec1__img-mobile {
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 22rem;
+    display: none;
+}
+.sec1__text__item__icon {
+    width: 100rem;
+    min-width: 100rem;
+    height: 100rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-right: 26rem;
+}
+.sec1__text__item {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 50rem;
+    &:first-child {
+        margin-top: 0;
+    }
+
+}
+.sec1__text__item__title {
+    font-weight: 800;
+    font-size: 24rem;
+}
+.sec1__text__items {
+    margin-top: 50rem;
+}
+.sec1__text__item__desc {
+    font-size: 18rem;
+    line-height: 150%;
+    margin-top: 10rem;
+}
+.sec1__parallax__wrapper {
+    &:nth-child(1) {
+        position: absolute;
+        top: -80rem;
+        left: 0;
+        .sec1__parallax__img {
+            width: 205rem;
+            height: 252rem;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+    }
+    &:nth-child(2) {
+        position: absolute;
+        bottom: -80rem;
+        right: 0;
+        .sec1__parallax__img {
+            width: 209rem;
+            height: 377rem;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .sec1__text__item__title {
+        font-size: 18rem;
+    }
+    .sec1__text__item__desc {
+        font-size: 14rem;
+    }
+    .sec1__img {
+        min-height: 382rem;
+    }
+    .sec1__parallax__wrapper:nth-child(1) .sec1__parallax__img {
+        width: 164rem;
+        height: 222rem;
+    }
+    .sec1__parallax__wrapper:nth-child(2) .sec1__parallax__img {
+        width: 122rem;
+        height: 187rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .sec1__content {
+        grid-template-columns: 1fr;
+    }
+    .sec1 {
+        padding: 30rem 0;
+        .sec__title {
+            text-align: center;
+        }
+    }
+    .sec1__img {
+        display: none;
+    }
+    .sec1__img-mobile {
+        display: block;
+    }
+    .sec1__parallax__wrapper:nth-child(1) {
+        top: -40rem;
+    }
+    .sec1__parallax__wrapper:nth-child(2) {
+        bottom: -40rem;
+    }
+    .sec1__parallax__wrapper:nth-child(1) .sec1__parallax__img {
+        width: 164rem;
+        height: 222rem;
+    }
+    .sec1__parallax__wrapper:nth-child(2) .sec1__parallax__img {
+        width: 122rem;
+        height: 187rem;
+    }
+    .sec1__parallax__wrapper:nth-child(1) .sec1__parallax__img {
+        width: 73rem;
+        height: 103rem;
+    }
+    .sec1__parallax__wrapper:nth-child(2) .sec1__parallax__img {
+        width: 72rem;
+        height: 110rem;
+    }
+}

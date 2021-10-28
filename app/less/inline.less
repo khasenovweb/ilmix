@@ -45,6 +45,8 @@ body {
 
 
 .global__wrapper {
+    overflow-x: hidden;
+    overflow-y: hidden;
     &.overflow-hidden {
         height: 100vh;
         overflow: hidden;
@@ -55,6 +57,12 @@ body {
     max-width: 1468rem;
     padding: 0 20rem;
     margin: 0 auto;
+}
+
+.container1920 {
+    max-width: 1920rem;
+    margin: 0 auto;
+    padding: 0 60rem;
 }
 
 input[type="text"] {
@@ -95,6 +103,16 @@ label {
     cursor: pointer;
     &:hover {
         background: linear-gradient(357.24deg, #E92231 -5.98%, #CC2834 90.08%);
+    }
+}
+
+
+.sec__title {
+    font-weight: 800;
+    font-size: 48rem;
+    color: @black;
+    &.center {
+        text-align: center;
     }
 }
 
@@ -141,5 +159,21 @@ label {
 // ======================= checkbox ============================ //
 // ============================================================= //
 
+@media screen and (max-width: 1024px) {
+    .sec__title {
+        font-size: 36rem;
+    }
+    .container1920 {
+        padding: 0 60rem;
+    }
+}
+@media screen and (max-width: 700px) {
+    .container1920 {
+        padding: 0 20rem;
+    }
+}
+
+
 @import "libs/owl.carousel.min.css";
 @import "partials/_heromain.less";
+@import "partials/_heropage.less";

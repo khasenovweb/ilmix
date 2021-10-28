@@ -1,0 +1,114 @@
+.heropage {
+    padding: 30rem 60rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    * {
+        color: @black;
+    }
+    .heromain__navbar__lang {
+        color: @red;
+    }
+    .container1920 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .btn {
+        color: white;
+        margin-top: 40rem;
+    }
+    
+}
+
+.heropage__content {
+    padding: 200rem 0;
+}
+
+.heropage__content__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30rem;
+    align-items: center;
+}
+
+.heropage__title {
+    font-weight: 800;
+    font-size: 80rem;
+}
+
+.heropage__desc {
+    font-size: 24rem;
+    margin-top: 20rem;
+    line-height: 160%;
+}
+
+.heropage__content__img {
+    // border: 1px solid gray;
+    position: relative;
+}
+
+.heropage__content__img__parallax__wrapper {
+    // border: 1px solid red;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.heropage__content__img__parallax {
+    // border: 1px solid green;
+}
+.heropage__content__img__parallax__image {
+    width: 1000rem;
+    height: 1000rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+// ============================================================= //
+// ========================== media ============================ //
+// ============================================================= //
+@media screen and (max-width: 1024px) {
+    .heropage__content__img__parallax__image {
+        width: 700rem;
+        height: 700rem;
+    }
+    .heropage__title {
+        font-size: 48rem;
+    }
+    .heropage__desc {
+        font-size: 18rem;
+    }
+    .heropage__content {
+        padding: 100rem 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .heropage {
+        padding: 20rem;
+    }
+    .heropage__content__row {
+        grid-template-columns: 1fr;
+    }
+    .heropage__content__img__parallax__wrapper {
+        position: static;
+        transform: translateY(0);
+    }
+    .heropage__content__img__parallax__image {
+        width: 100%;
+        height: 300rem;
+    }
+    .heropage__content__img {
+        order: 1;
+    }
+    .heropage__content__text {
+        order: 2;
+    }
+    .heropage__content {
+        padding-top: 30rem;
+        padding-bottom: 50rem;
+    }
+}
+// ============================================================= //
+// ====================== END media ============================ //
+// ============================================================= //

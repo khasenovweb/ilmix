@@ -1,0 +1,129 @@
+.modal__wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 100rem 0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10rem);
+    transition: 0.3s;
+    &.active {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal {
+    background-color: #fff;
+    width: 669rem;
+    border-radius: 10rem;
+    padding: 50rem;
+    position: relative;
+}
+.modal__parallax__wrapper {
+    position: absolute;
+    bottom: -50rem;
+    right: -50rem;
+}
+.modal__parallax__img {
+    width: 152rem;
+    height: 159rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.modal__close {
+   position: absolute;
+   right: -40rem;
+   top: -40rem;
+   width: 50rem;
+   height: 50rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+}
+.modal__title {
+    font-size: 36rem;
+    font-weight: bold;
+    color: @black;
+}
+.modal__form {
+    margin-top: 37rem;
+    .btn {
+        margin-top: 28rem;
+        font-size: 18rem;
+        padding: 15rem 30rem;
+    }
+}
+.modal__form__inputgroup {
+    margin-top: 14rem;
+    &:first-child {
+        margin-top: 0;
+    }
+    label {
+        font-size: 16rem;
+        color: @black;
+    }
+    input[type="text"] {
+        margin-top: 14rem;
+    }
+}
+.modal__form__politics {
+    margin-top: 20rem;
+    display: flex;
+    align-items: flex-start;
+    .checkbox {
+        margin-top: 2rem;
+        margin-right: 10rem;
+    }
+}
+.modal__form__politics__title {
+    font-size: 14rem;
+    color: #D2D2D2;
+    a {
+        color: #D2D2D2;
+        &:hover {
+            color: @red;
+        }
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 700px) {
+    .modal {
+        width: 90%;
+        padding: 30rem;
+    }
+    .modal__close {
+        right: -10rem;
+        top: -60rem;
+    }
+    .modal__title {
+        font-size: 24rem;
+    }
+    .modal__form {
+        margin-top: 20rem;
+    }
+    .modal__parallax__img {
+        width: 91rem;
+        height: 96rem;
+    }
+    .modal__parallax__wrapper {
+        bottom: -40rem;
+        right: -9rem;
+    }
+
+}

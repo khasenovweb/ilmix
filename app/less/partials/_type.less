@@ -1,0 +1,111 @@
+.type {
+    padding-top: 86rem;
+    padding-bottom: 120rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.type__slider__wrapper {
+    padding:0 80rem;
+}
+.type__slider {
+    margin-top: 67rem;
+    button.owl-prev {
+        position: absolute;
+        left: -40rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    button.owl-next {
+        position: absolute;
+        right: -40rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+.type__slider__slide__img {
+    width: 100%;
+    padding-bottom: 62%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.type__slider__slide {
+    border-radius: 10rem;
+    background-color: #fff;
+    overflow: hidden;
+    height: 100%;
+    .btn {
+        margin-top: auto;
+        font-size: 18rem;
+        padding: 15rem 30rem;
+        display: block;
+    }
+}
+.type__slider__slide__text {
+    padding: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 200rem;
+
+}
+.type__slider__slide__title {
+    font-weight: 800;
+    font-size: 24rem;
+    line-height: 120%;
+    color: @black;
+    margin-bottom: 26rem;
+}
+.type__slider__slide__desc {
+    font-size: 16rem;
+    color: @black;
+    margin-bottom: 20rem;
+}
+.type__slider__dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 56rem;
+    button.owl-dot {
+        width: 12rem;
+        height: 12rem;
+        border-radius: 100%;
+        background-color: #3F4A5B;
+        border: none;
+        margin: 6rem;
+        &.active {
+            background-color:@red;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .type {
+        padding-top: 67rem;
+        padding-bottom: 73rem;
+    }
+    .type__slider {
+        margin-top: 48rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .type__slider {
+        margin-top: 25rem;
+    }
+    .type__slider__slide__title {
+        font-size: 18rem;
+    }
+    .type__slider__wrapper {
+        padding: 0 40rem;
+    }
+    .type {
+        padding-top: 39rem;
+        padding-bottom: 48rem;
+    }
+    .type__slider__dots {
+        margin-top: 25rem;
+    }
+
+}
