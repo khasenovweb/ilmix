@@ -23,14 +23,14 @@ $(document).ready(function(){
     $('.heromain__slider').owlCarousel({
         items: 1,
         nav: true,
-        navText: ["<img src='/img/hero-slider-orrow-left.svg'>","<img src='/img/hero-slider-orrow-right.svg' >"],
+        navText: ["<img src='img/hero-slider-orrow-left.svg'>","<img src='img/hero-slider-orrow-right.svg' >"],
     });
 
 
     $('.type__slider').owlCarousel({
         items: 4,
         nav: true,
-        navText: ["<img src='/img/type_slider_nav_prev.svg'>","<img src='/img/type_slider_nav_next.svg' >"],
+        navText: ["<img src='img/type_slider_nav_prev.svg'>","<img src='img/type_slider_nav_next.svg' >"],
         margin: 30,
         dotsContainer: '.type__slider__dots',
         responsive: {
