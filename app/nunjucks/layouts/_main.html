@@ -6,6 +6,14 @@
 	<title>{{ title }}</title>
 	<meta name="description" content="SEO Description">
 	<link rel="stylesheet" href="css/inline.css">
+	<style>
+		.modal__wrapper {
+			visibility: hidden;
+		}
+		.nav {
+			visibility: hidden;
+		}
+	</style>
 </head>
 <body>
 <div class="global__wrapper">
@@ -133,7 +141,7 @@
 				</div>
 				<div class="modal__form__politics">
 					<label for="modalform1" class="checkbox">
-						<input type="checkbox" id="modalform1">
+						<input type="checkbox" id="modalform1" checked>
 						<div class="checkbox__custom">
 							<div class="checkbox__custom__circle"></div>
 						</div>
@@ -150,5 +158,71 @@
 </div>
 	<link rel="stylesheet" href="css/main.css">
 	<script src="js/main.js"></script>
+	<script>
+		$("form[data-form-validate='ask-us']").each(function (i, el) {
+			$(el).validate({
+				rules: {
+					phone: "phone",
+					name: {
+						required: true
+					}
+				},
+				messages: {
+					name: {
+						required: "Введите имя"
+					}
+				},
+				submitHandler: function (form) {
+					console.log('Валидно можно отправлять');
+				}
+			});
+		});
+
+		$("form[data-form-validate='modal']").each(function (i, el) {
+			$(el).validate({
+				rules: {
+					phone: "phone",
+					name: {
+						required: true
+					}
+				},
+				messages: {
+					name: {
+						required: "Введите имя"
+					}
+				},
+				submitHandler: function (form) {
+					console.log('Валидно можно отправлять');
+				}
+			});
+		});
+	</script>
+	<script>
+        $('.heromain__slider').owlCarousel({
+            items: 1,
+            nav: true,
+            navText: ["<img src='img/hero-slider-orrow-left.svg'>","<img src='img/hero-slider-orrow-right.svg' >"],
+        });
+
+
+        $('.type__slider').owlCarousel({
+            items: 4,
+            nav: true,
+            navText: ["<img src='img/type_slider_nav_prev.svg'>","<img src='img/type_slider_nav_next.svg' >"],
+            margin: 30,
+            dotsContainer: '.type__slider__dots',
+            responsive: {
+                0: {
+                    items: 1
+                },
+                700: {
+                    items: 2
+                },
+                1024: {
+                    items: 4
+                },
+            }
+        });
+    </script>
 </body>
 </html>

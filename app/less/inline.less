@@ -41,16 +41,17 @@ html {
 
 body {
     font-size: 16rem;
+    &.overflow-hidden {
+        height: 100vh;
+        overflow: hidden;
+    }
 }
 
 
 .global__wrapper {
     overflow-x: hidden;
     overflow-y: hidden;
-    &.overflow-hidden {
-        height: 100vh;
-        overflow: hidden;
-    }
+    
 }
 
 .container {

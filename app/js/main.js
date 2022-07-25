@@ -20,31 +20,7 @@ $(document).ready(function(){
         var parallaxInstance = new Parallax(el);
     });
     
-    $('.heromain__slider').owlCarousel({
-        items: 1,
-        nav: true,
-        navText: ["<img src='img/hero-slider-orrow-left.svg'>","<img src='img/hero-slider-orrow-right.svg' >"],
-    });
-
-
-    $('.type__slider').owlCarousel({
-        items: 4,
-        nav: true,
-        navText: ["<img src='img/type_slider_nav_prev.svg'>","<img src='img/type_slider_nav_next.svg' >"],
-        margin: 30,
-        dotsContainer: '.type__slider__dots',
-        responsive: {
-            0: {
-                items: 1
-            },
-            700: {
-                items: 2
-            },
-            1024: {
-                items: 4
-            },
-        }
-    });
+    
     $('.whatelse__slider ').owlCarousel({
         items: 4,
         nav: true,
@@ -56,32 +32,51 @@ $(document).ready(function(){
         $('.nav').toggleClass('active');
         $(this).toggleClass('active');
         $('.heromain__header').toggleClass('nav__active');
-        $('.global__wrapper').toggleClass('overflow-hidden');
+        if( $('.nav').hasClass('active') == false ) {
+            setTimeout(function(){
+                $('body').removeClass('overflow-hidden');
+                $('body').css('padding-right','0px');
+            }, 300);
+        }else {
+            $('body').addClass('overflow-hidden');
+            var scrollbar_width = get_scrollbar_width();
+            $('body').css('padding-right', scrollbar_width+'px');
+        }
     });
+
+
 
     $('[data-modal-show]').click(function(){
         var id = $(this).attr('data-modal-show');
-        $('[data-modal="'+id+'"').addClass('active');
-        $('.global__wrapper').addClass('overflow-hidden');
-        var scrollbar_width = get_scrollbar_width();
-        $('.global__wrapper').css('padding-right', scrollbar_width+'px');
+        modalShow(id);
     });
+
     $('[data-modal-close]').click(function(){
         var id = $(this).attr('data-modal-close');
-        $('[data-modal="'+id+'"').removeClass('active');
-        setTimeout(function(){
-            $('.global__wrapper').removeClass('overflow-hidden');
-            $('.global__wrapper').css('padding-right','0px');
-        }, 300);
+        modalClose(id);
     });
+
     $('.modal__wrapper').click(function(event){
         if ($(event.target).closest(".modal").length) return; 
-        $(this).removeClass('active');
+        var id = $(this).attr('data-modal');
+        modalClose(id);
+    });
+
+
+    function modalShow(id) {
+        $('[data-modal="'+id+'"').addClass('active');
+        $('body').addClass('overflow-hidden');
+        var scrollbar_width = get_scrollbar_width();
+        $('body').css('padding-right', scrollbar_width+'px');
+    }
+
+    function modalClose(id) {
+        $('[data-modal="'+id+'"').removeClass('active');
         setTimeout(function(){
-            $('.global__wrapper').removeClass('overflow-hidden');
-            $('.global__wrapper').css('padding-right','0px');
+            $('body').removeClass('overflow-hidden');
+            $('body').css('padding-right','0px');
         }, 300);
-    })
+    }
 
 
 
@@ -112,41 +107,5 @@ $(document).ready(function(){
         "Введите номер телефона полностью"
     );
 
-    $("form[data-form-validate='ask-us']").each(function (i, el) {
-        $(el).validate({
-            rules: {
-                phone: "phone",
-                name: {
-                    required: true
-                }
-            },
-            messages: {
-                name: {
-                    required: "Введите имя"
-                }
-            },
-            submitHandler: function (form) {
-                console.log('Валидно можно отправлять');
-            }
-        });
-    });
-
-    $("form[data-form-validate='modal']").each(function (i, el) {
-        $(el).validate({
-            rules: {
-                phone: "phone",
-                name: {
-                    required: true
-                }
-            },
-            messages: {
-                name: {
-                    required: "Введите имя"
-                }
-            },
-            submitHandler: function (form) {
-                console.log('Валидно можно отправлять');
-            }
-        });
-    });
+    
 });

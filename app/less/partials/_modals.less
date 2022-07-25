@@ -13,12 +13,14 @@
     overflow-y: auto;
     visibility: hidden;
     opacity: 0;
-    transform: translateY(10rem);
+    
     transition: 0.3s;
     &.active {
         visibility: visible;
         opacity: 1;
-        transform: translateY(0);
+        .modal {
+            transform: translateY(0);
+        }
     }
 }
 
@@ -28,6 +30,8 @@
     border-radius: 10rem;
     padding: 50rem;
     position: relative;
+    transform: translateY(10rem);
+    transition: 0.3s;
 }
 .modal__parallax__wrapper {
     position: absolute;
